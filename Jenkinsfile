@@ -16,7 +16,6 @@ pipeline {
                 cd ./target/
                 '''
                 echo 'Build maven package----done ---done'
-                echo '----done ---done'
             }
         }
    stage('Maven-Deploy') { 
@@ -27,11 +26,10 @@ pipeline {
                 '''
                 script {
                     /* groovylint-disable-next-line LineLength */
-                    deploy adapters: [tomcat9(credentialsId: 'tomcat_manager', path: '',
-                    url: 'http://3.144.169.57:8081/')],
-                    contextPath: '/itdefined-war', 
-                    onFailure: false, 
-                    war: 'simple-war/target/itdefined-war-1.0.0.war'
+                    deploy adapters: [tomcat9(credentialsId: 'tomcat_manager', path: '', 
+                    url: 'http://3.137.42.112:8081/')], 
+                    contextPath: '/itdefined-war-1.0.0', 
+                    war: '/target/itdefined-war-1.0.0.war'
                 }
             }
         }
