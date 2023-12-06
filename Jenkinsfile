@@ -29,7 +29,7 @@ pipeline {
                     deploy adapters: [tomcat9(credentialsId: 'tomcat_manager', path: '', 
                     url: 'http://3.137.42.112:8081/')], 
                     contextPath: '/itdefined-war-1.0.0', 
-                    war: '/target/itdefined-war-1.0.0.war'
+                    war: 'simple-war/target/itdefined-war-1.0.0.war'
                 }
             }
         }
